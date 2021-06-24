@@ -1,0 +1,75 @@
+export const listItemsDefaults = {
+	watching_servers: { name: "", code: "" },
+	video_files: {
+		raw_type: "blu-ray",
+		resolution: "1080",
+		size: "",
+		audio: "AAC",
+		language: "",
+		subtitle: "",
+		translator: "",
+		download_servers: [
+			{ name: "", file: null },
+			{ name: "", link: "" },
+		],
+	},
+	"video_files.download_servers": { name: "", link: "" },
+};
+
+const initialShowState = {
+	data: {
+		id: "",
+		type: "",
+		name: "",
+		another_name: "",
+		genres: [],
+		release_year: "",
+		score: "",
+		rate: "",
+		duration: "",
+		season: "",
+		episodes: "",
+		status: "a",
+		source: "manga",
+		studio: "n/a",
+		related_shows: [],
+		release_date: "",
+		aired_from: "",
+		aired_to: "",
+		story: "",
+		imdb_link: "",
+		mal_link: "",
+		poster: "",
+		background: "",
+		square_image: "",
+		trailer_link: "",
+		tags: [],
+		published: 1,
+		publish_date: {
+			date: "",
+			time: "",
+		},
+		reviews_enabled: 1,
+		author: "",
+		keywords: "",
+		description: "",
+		gallery: [],
+		arcs: {
+			form: {
+				id: "",
+				key: "",
+				no: "",
+				name: "",
+			},
+			list: [],
+		},
+		watching_servers: [
+			{ name: "", files: {} },
+			{ name: "", code: "" },
+		],
+		video_files: [listItemsDefaults.video_files],
+	},
+	errors: {},
+};
+
+export default initialShowState;

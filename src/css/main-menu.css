@@ -1,0 +1,103 @@
+#layout.menu-widget h4::before {
+	content: "\f0c1";
+	font-size: 12px;
+}
+
+#layout.menu-widget .widget-box {
+	cursor: move;
+}
+
+#layout.menu-widget .widget-box button {
+	background-color: transparent;
+	border: none;
+	outline: none !important;
+	cursor: pointer;
+	padding: 2px 5px;
+}
+
+#layout.menu-widget .widget-box button + button {
+	margin-left: 10px;
+}
+
+#layout.menu-widget .widget-box .delete-btn {
+	color: #ef233c;
+}
+
+#layout.menu-widget .widget-box .edit-btn::before {
+	font-weight: 400;
+}
+
+#layout.menu-widget .widget-box .edit-btn:hover::before {
+	font-weight: bold;
+}
+
+#layout.menu-widget .widget-box .link-type {
+	color: #8d99ae;
+	font-size: 13px;
+	margin-left: auto;
+	margin-right: 15px;
+}
+
+#layout.menu-widget .widget-box .sub-link {
+	background-color: #2b2d42;
+	font: 11px "Nunito", serif;
+	padding: 3px 5px;
+	margin-left: 20px;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	transition: 0.5s all;
+}
+
+#layout.menu-widget .widget-box:hover .sub-link {
+	visibility: visible;
+	opacity: 1;
+}
+
+#layout.menu-widget .sub-link::after {
+	content: "\f3be";
+	font: bold 10px "Font Awesome 5 Free";
+	margin-left: 3px;
+}
+
+#layout.menu-widget .main-menu-drop-zone.sub-menu {
+	min-height: 50px;
+	border: 2px dashed #eee;
+	margin-left: 50px;
+	margin-top: 25px;
+	width: auto;
+	overflow: visible;
+}
+
+#layout.menu-widget .main-menu-drop-zone.sub-menu:empty {
+	display: none;
+}
+
+#layout.menu-widget .main-menu-drop-zone.sub-menu > :first-child .field {
+	margin-top: 0;
+}
+
+#layout.menu-widget .main-menu-drop-zone.sub-menu .sub-link {
+	display: none !important;
+}
+
+#layout.menu-widget .main-menu-drop-zone.sub-menu .widget-box h4::after {
+	content: "sub link";
+	font: 400 italic 13px "Nunito", serif;
+	color: #8d99ae;
+	margin-left: 5px;
+}
+
+#layout.menu-widget .field {
+	margin: 25px 0 0 0;
+}
+
+#layout.menu-widget .widget-content > .row > :first-child > .field {
+	margin-top: 0;
+}
+
+#layout.menu-widget .widget-content {
+	padding: 25px;
+}

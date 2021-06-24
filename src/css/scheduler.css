@@ -1,0 +1,134 @@
+#show-scheduler-form {
+	background-color: #f9f9f9;
+}
+
+#show-scheduler-form > h3 {
+	background-color: transparent;
+	color: #2b2d42;
+	margin: 0;
+	border: none !important;
+	background-color: #eee;
+}
+
+#show-scheduler-form .widget-content {
+	padding: 25px;
+}
+
+#show-scheduler-form .field.date::after {
+	margin-right: 15px;
+}
+
+#show-time {
+	height: 38px;
+}
+
+/*==================================
+=> Today's Shows Widget Style Sheet
+==================================*/
+
+.day-shows ul {
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: wrap;
+	background-color: #f9f9f9;
+}
+
+.day-shows p {
+	padding: 25px;
+	background-color: #fff;
+	color: #8d99ae;
+	font-style: italic;
+	text-align: center;
+}
+
+.day-shows .widget-content {
+	padding: 0 !important;
+}
+
+.day-shows ul li {
+	width: 33.3333%;
+	background-color: #fff;
+	display: -webkit-flex;
+	display: flex;
+	padding: 20px;
+	border-bottom: 1px solid #eee;
+}
+
+.day-shows ul li:not(:nth-child(3n)) {
+	border-right: 1px solid #eee;
+}
+
+.day-shows ul li.gray {
+	background-color: transparent;
+}
+
+.day-shows .show-poster {
+	width: 100px;
+	align-self: center;
+	position: relative;
+	flex: 0 0 auto;
+	margin-right: 20px;
+}
+
+.day-shows .show-poster::before {
+	display: block;
+	content: "";
+	padding-top: 156%;
+}
+
+.day-shows .show-poster a {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-position: center;
+	background-size: cover;
+}
+
+.day-shows .show-poster a:hover {
+	opacity: 0.75;
+}
+
+.day-shows .show-info {
+	flex: 1 1 auto;
+	position: relative;
+}
+
+.day-shows .show-info dl {
+	font-size: 14px;
+	margin: 10px 0;
+}
+
+.day-shows .show-info dt {
+	font-style: italic;
+	color: #8d99ae;
+}
+
+.day-shows .show-info dd {
+	margin: 5px 0 0;
+}
+
+.day-shows .show-info dd:not(:last-of-type) {
+	margin-bottom: 15px;
+}
+
+.day-shows .show-info dd * {
+	font-weight: bold;
+	line-height: 1.45;
+}
+
+.day-shows .day-show-actions {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.day-shows button {
+	font-size: 12px !important;
+	padding: 4.5px 6px !important;
+}
+
+.day-shows button + button {
+	margin-left: 5px;
+}

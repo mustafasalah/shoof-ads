@@ -1,0 +1,57 @@
+/*=====================
+=> Loader Style Sheet
+=====================*/
+
+@-webkit-keyframes spin-rotate {
+	from {
+		-webkit-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-o-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spin-rotate {
+	from {
+		-webkit-transform: rotate(0);
+		-moz-transform: rotate(0);
+		-o-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.loader {
+	padding-top: 50%;
+	text-align: center;
+	color: #d90429;
+	position: relative;
+	background-color: #f9f9f9;
+}
+
+.loader > * {
+	font-size: 1.5em;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-animation: spin-rotate 1s linear infinite;
+	-moz-animation: spin-rotate 1s linear infinite;
+	-o-animation: spin-rotate 1s linear infinite;
+	animation: spin-rotate 1s linear infinite;
+}

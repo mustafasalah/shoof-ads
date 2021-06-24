@@ -1,0 +1,703 @@
+/*===========================
+=> A. General Style Sheet
+===========================*/
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: 0.5s transform, 0.5s background-color, 0.5s opacity;
+	-moz-transition: 0.5s transform, 0.5s background-color, 0.5s opacity;
+	-o-transition: 0.5s transform, 0.5s background-color, 0.5s opacity;
+	transition: 0.5s transform, 0.5s background-color, 0.5s opacity;
+}
+
+::-moz-selection {
+	color: #fff;
+	background: #ef233c;
+}
+
+::selection {
+	color: #fff;
+	background: #ef233c;
+}
+
+img,
+video {
+	max-width: 100%;
+}
+
+html {
+	-ms-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+	width: device-width;
+}
+
+body {
+	font: 16px "Nunito", serif;
+	color: #2b2d42;
+	overflow-x: hidden;
+}
+
+.blur-shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 0 10px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.16) 0 0 10px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0 0 10px;
+}
+
+.focus-shadow {
+	-webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px;
+}
+
+.radius {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.radius-3 {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+p.not-available {
+	text-align: center;
+	background-color: #f9f9f9;
+	padding: 1em;
+	font-size: 0.9375em;
+	font-style: italic;
+	color: #8d99ae;
+	margin: 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/*========================
+=> Top Bar Style Sheet
+========================*/
+
+#top-bar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 260px;
+	z-index: 999;
+}
+
+#inner-wrapper {
+	background-color: #f9f9f9;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 50px;
+}
+
+#top-bar a {
+	color: #2b2d42;
+}
+
+#top-bar a:hover {
+	color: #d90429;
+}
+
+/*------------------------
+=> Navigation Style Sheet 
+------------------------*/
+
+#navigation li {
+	font-size: 0.9375em;
+	float: left;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#navigation li + li::before {
+	content: "\f054";
+	font: bold 0.6em "Font Awesome 5 Free";
+	color: #8d99ae;
+}
+
+#navigation li + li,
+#navigation li + li > * {
+	margin-left: 0.6666em;
+}
+
+#navigation li i {
+	color: #d90429;
+	font-size: 0.9333em;
+	margin-right: 0.3846em;
+}
+
+/*---------------------------
+=> admin Buttons Style Sheet
+---------------------------*/
+
+#admin-btns {
+	display: -webkit-flex;
+	display: flex;
+}
+
+#admin-btns > * {
+	position: relative;
+	border-left: 1px solid #eee;
+}
+
+#admin-btns button {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	outline: none !important;
+	cursor: pointer;
+}
+
+#admin-btns .top-bar-btn button {
+	font-size: 1.125em;
+	padding: 40px 30px;
+}
+
+#admin-btns .top-bar-btn button.active i {
+	color: #d90429;
+}
+
+#add-btn button i {
+	width: 28.5px;
+	text-align: center;
+}
+
+#notify-btn button::after,
+#admin-profile button strong::after {
+	content: "\f0dd";
+	font: bold 0.72222em "Font Awesome 5 Free";
+	color: #8d99ae;
+	vertical-align: top;
+}
+
+#notify-btn button i {
+	position: relative;
+}
+
+#notify-btn .counter {
+	font: bold 10px "Nunito";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	line-height: 16px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #ef233c;
+	color: #fff;
+	text-align: center;
+	top: 0;
+	right: 0;
+}
+
+#notify-btn > button .counter {
+	-webkit-transform: translate(75%, -75%);
+	-moz-transform: translate(75%, -75%);
+	-o-transform: translate(75%, -75%);
+	transform: translate(75%, -75%);
+}
+
+#notify-btn > .sub-menu .counter {
+	-webkit-transform: translate(-15px, 14.7px);
+	-moz-transform: translate(-15px, 14.7px);
+	-o-transform: translate(-15px, 14.7px);
+	transform: translate(-15px, 14.7px);
+}
+
+#notify-btn p {
+	margin: 0;
+	font-size: 0.9285em;
+	margin-top: 5px;
+}
+
+#notify-btn p.no-notifications {
+	margin: 15px 0;
+	text-align: center;
+	font-style: italic;
+	color: #8d99ae;
+}
+
+.notify-label {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 0.8571em;
+	padding: 2px 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.notify-label.comment {
+	background-color: #ef2360;
+}
+
+.notify-label.review {
+	background-color: #2397ef;
+}
+
+.notify-label.user {
+	background-color: #ef6623;
+}
+
+.notify-label.report {
+	background-color: red;
+}
+
+#admin-profile {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	padding-left: 30px;
+}
+
+#admin-avatar {
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	background-position: center;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 1px solid #eee;
+	margin-right: 0.9375em;
+}
+
+#admin-profile button {
+	font-size: 0.875em;
+	padding: 10px;
+	background-color: #eee;
+	text-align: left;
+}
+
+#admin-profile button strong {
+	display: block;
+	margin-bottom: 2px;
+}
+
+#admin-profile button small {
+	color: #8d99ae;
+}
+
+#admin-profile button strong::after {
+	font-size: 0.86666em;
+	margin-left: 0.3846em;
+}
+
+#top-bar button.active {
+	color: #fff;
+	border-color: #2b2d42;
+	background-color: #2b2d42;
+}
+
+/*------ Sub Menu Style Sheet ------*/
+
+#top-bar .sub-menu {
+	position: absolute;
+	top: 100%;
+	background-color: #fff;
+	right: 0;
+	width: 220px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+	overflow: hidden;
+	z-index: -1;
+	-webkit-transform-origin: right top;
+	transform-origin: right top;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-o-transform: scale(0);
+	transform: scale(0);
+	max-height: 280px;
+	overflow: auto;
+}
+
+#top-bar button.active + .sub-menu {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
+}
+
+#top-bar .sub-menu > li > a {
+	font-weight: bold;
+	font-size: 0.875em;
+	display: block;
+	padding: 12px 15px;
+	text-decoration: none;
+	position: relative;
+}
+
+#top-bar .sub-menu > li > a:hover {
+	background-color: #2b2d42;
+	color: #fff;
+}
+
+#top-bar .sub-menu > li > a > i {
+	font-size: 0.9333em;
+	margin-right: 5px;
+	color: #d90429;
+}
+
+#top-bar .sub-menu > li + li {
+	border-top: 1px solid #eee;
+}
+
+#notify-btn .sub-menu {
+	width: 300px;
+}
+
+/*========================
+=> Side Bar Style Sheet
+========================*/
+
+#side-bar {
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: column;
+	position: fixed;
+	width: 260px;
+	padding: 0 25px;
+	background-color: #2b2d42;
+	color: #fff;
+	height: 100%;
+	top: 0;
+	overflow-y: auto;
+	z-index: 1;
+}
+
+#side-bar a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#logo {
+	margin: 40px auto;
+}
+
+#side-bar nav > ul > li + li {
+	margin-top: 5px;
+}
+
+#side-bar nav > ul > li > a {
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	padding: 10px 15px;
+}
+
+#side-bar nav > ul > li > a:hover,
+#side-bar nav > ul > li > a.active {
+	background-color: #16182b;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0 3px 6px;
+}
+
+#side-bar nav > ul > li > a.active::after {
+	content: "\f054";
+	font: bold 0.75em "Font Awesome 5 Free";
+	margin-left: auto;
+	color: #8d99ae;
+}
+
+#side-bar nav > ul > li > a > i {
+	color: #d90429;
+	width: 20px;
+	margin-right: 7px;
+	text-align: center;
+}
+
+#side-bar .sub-menu {
+	background-color: #16182b;
+	margin: 10px auto;
+	font-size: 0.9375em;
+	-webkit-transform-origin: right top;
+	transform-origin: center top;
+	display: none;
+	overflow: hidden;
+	width: 95%;
+}
+
+#side-bar a.active + .sub-menu {
+	display: block;
+}
+
+#side-bar .sub-menu li + li {
+	border-top: 1px solid #2b2d42;
+}
+
+#side-bar .sub-menu a {
+	display: block;
+	padding: 10px 15px;
+	font-weight: 400;
+}
+
+#side-bar .sub-menu a::before {
+	content: "\f30b";
+	font: bold 0.8em "Font Awesome 5 Free";
+	margin-right: 10px;
+	color: #8d99ae;
+}
+
+#side-bar .sub-menu a.add-link::before {
+	content: "\f067";
+}
+
+#side-bar .sub-menu a:hover,
+#side-bar .sub-menu a.active {
+	background-color: #d90429;
+	color: #fff;
+}
+
+#side-bar .sub-menu a.active {
+	font-weight: bold;
+}
+
+#side-bar .sub-menu a.active::before,
+#side-bar .sub-menu a:hover::before {
+	color: #fff;
+}
+
+#development-rights {
+	line-height: 1.6;
+	text-align: center;
+	padding-top: 30px;
+	font-size: 0.8125em;
+}
+
+#development-rights span {
+	color: #8d99ae;
+	font-style: italic;
+}
+
+/*============================
+=> Content Section Style Sheet
+============================*/
+
+#content-section {
+	margin-left: 260px;
+	margin-top: 100px;
+	padding: 40px;
+	overflow: hidden;
+}
+
+#content-section > h2 {
+	margin: 0;
+	margin-bottom: 30px;
+	font-size: 22px;
+}
+
+#content-section > h2 span {
+	display: inline-block;
+	padding-bottom: 2px;
+	color: #d90429;
+	border-bottom: 1px solid #eee;
+	vertical-align: middle;
+}
+
+#content-section > h2 .add-new {
+	font: 400 0.58333em "Nunito";
+	color: #2b2d42;
+	background-color: #eee;
+	padding: 6px 10px;
+	text-decoration: none;
+	margin-left: 10px;
+	vertical-align: middle;
+	position: relative;
+	display: inline-block;
+	z-index: 1;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	text-align: initial;
+}
+
+#content-section > h2 .add-new::before,
+#content-section > h2 .nested-add-new a::before {
+	content: "\f067 ";
+	font: bold 0.8em "Font Awesome 5 Free";
+	color: #d90429;
+	margin-right: 5px;
+}
+
+#content-section > h2 .add-new:hover {
+	background-color: #d90429;
+	color: #fff;
+	overflow: visible;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#content-section > h2 .add-new:hover::before {
+	color: inherit;
+}
+
+#content-section > h2 .nested-add-new-container {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: #f9f9f9;
+	border-radius: 0 0 5px 5px;
+	overflow: hidden;
+	transform: scaleY(0);
+	transform-origin: center top;
+	transition: transform 0.5s;
+}
+
+#content-section > h2 .add-new:hover .nested-add-new-container {
+	transform: scaleY(1);
+}
+
+#content-section > h2 .nested-add-new a {
+	display: block;
+	text-decoration: none;
+	padding: 8px 10px;
+	font-weight: bold;
+	color: #16182b;
+}
+
+#content-section > h2 .nested-add-new a:hover {
+	background-color: #16182b;
+	color: #fff;
+}
+
+#main-side {
+	width: -webkit-calc(67% - 20px);
+	width: calc(67% - 20px);
+	float: left;
+}
+
+#end-side {
+	width: -webkit-calc(33% - 20px);
+	width: calc(33% - 20px);
+	float: right;
+}
+
+#content-section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/*============================
+=> Widget General Style Sheet
+============================*/
+
+.widget > h3 {
+	font-size: 18px;
+	margin-bottom: 25px;
+	color: #d90429;
+}
+
+.widget > header {
+	font-size: 18px;
+	margin-bottom: 25px;
+	color: #d90429;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.widget > header > h3 {
+	font-size: inherit;
+}
+
+.widget h3 span {
+	display: inline-block;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #eee;
+}
+
+.widget + .widget {
+	margin-top: 40px;
+}
+
+.widget a {
+	color: #16182b;
+}
+
+.widget a:hover {
+	color: #d90429;
+}
+
+.widget .widget-options {
+	background-color: #f9f9f9;
+	border: 1px solid #eee;
+	font-size: 13px;
+	padding: 5px;
+	outline: none !important;
+}
+
+.widget .widget-options:focus {
+	border-color: #ccc;
+}
+
+.widget .do-btn {
+	background-color: #ef233c;
+	color: #fff;
+	outline: none !important;
+	border: none;
+	font: bold 12px "Nunito", serif;
+	padding: 2px 6px;
+	cursor: pointer;
+}
+
+.widget .do-btn:hover {
+	background-color: #fff;
+	color: #d90429;
+}
+
+.widget.list li {
+	padding: 15px;
+	font-size: 14px;
+}
+
+.widget.list li + li {
+	border-top: 1px solid #eee;
+}
+
+.widget.list li:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.widget .no-content {
+	margin: 15px 0;
+	font-size: 0.875em;
+	font-style: italic;
+	text-align: center;
+	color: #8d99ae;
+}

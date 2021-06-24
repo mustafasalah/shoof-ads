@@ -1,0 +1,5 @@
+{
+	"paginationLength": 7,
+	"itemsPerPageList": [5, 10, 20, 30, 40, 50, 100],
+	"defaultItemsPerPage": 10
+}

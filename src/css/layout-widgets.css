@@ -1,0 +1,172 @@
+#layout .widget-content {
+	border: 2px solid #eee;
+}
+
+#layout .widget-content > .row + .row {
+	margin-top: 15px;
+}
+
+#layout .widget-section h3 {
+	text-align: center;
+	font-size: 18px;
+}
+
+#layout .add-widget {
+	border: 2px dashed #eee;
+	text-align: center;
+}
+
+#layout .add-widget button {
+	display: block;
+	padding: 12px 15px;
+	text-decoration: none;
+	font-size: 16px;
+	background-color: transparent;
+	color: #8d99ae;
+	border: none;
+	font-weight: bold;
+	width: 100%;
+	cursor: pointer;
+}
+
+#layout .add-widget:hover {
+	border-color: #ccc;
+}
+
+#layout .add-widget:hover button {
+	color: #ef233c;
+}
+
+#layout .widget-section h3 span {
+	display: inline-block;
+	color: #fff;
+	background-color: #d90429;
+	padding: 3px 12px;
+	border: none;
+}
+
+#layout h4 {
+	font-size: 17px;
+	color: #d90429;
+}
+
+#layout h4::before,
+#layout .add-widget button::before {
+	font: bold 14px "Font Awesome 5 Free";
+	margin-right: 5px;
+}
+
+#layout .widget-box {
+	display: -webkit-flex;
+	display: flex;
+	background-color: #fff;
+	justify-content: space-between;
+	align-items: center;
+	padding: 12px 15px;
+	cursor: default;
+	border: 2px solid #f9f9f9;
+}
+
+#layout .widget-box.disabled h4 {
+	color: #8d99ae;
+}
+
+#layout .widget-box.disabled h4::after {
+	content: "(disabled)";
+	font: 400 italic 13px "Nunito", serif;
+	color: #ccc;
+	margin-left: 2px;
+}
+
+#layout .drop-zone {
+	outline: none;
+}
+
+#layout .drop-zone .widget-box {
+	cursor: move;
+}
+
+#layout .widget-box:not(.disabled):hover,
+#layout .widget-box:not(.disabled).active {
+	border-color: #d90429;
+}
+
+#layout .widget-box button {
+	font-size: 13px;
+}
+
+#layout .widget-box button i {
+	font-size: 12px;
+}
+
+#layout .widget-box,
+#layout .add-widget,
+#layout .drop-zone > * {
+	-webkit-transition: 0.5s border-color;
+	-moz-transition: 0.5s border-color;
+	-o-transition: 0.5s border-color;
+	transition: 0.5s border-color;
+	outline: none !important;
+}
+
+#layout .draggable-source--is-dragging {
+	opacity: 0.5;
+}
+
+#layout .draggable-mirror {
+	z-index: 99999;
+}
+
+#layout p.not-available {
+	width: 100%;
+	margin: 20px 0 0;
+	padding: 0;
+}
+
+/*-------------- Layout Widget Icons ----------------*/
+
+#layout h4.main-menu::before {
+	content: "\f03a";
+}
+
+#layout h4.recent::before {
+	content: "\f0e7";
+}
+
+#layout h4.ads::before {
+	content: "\f0a1";
+}
+
+#layout h4.category::before,
+#layout h4.slider::before,
+#layout h4.selected_shows::before {
+	content: "\f008";
+}
+
+h4.search::before {
+	content: "\f0b0";
+}
+
+#layout h4.social_media::before {
+	content: "\f1e0";
+}
+
+#layout h4.schedule::before {
+	content: "\f783";
+}
+
+#layout h4.links_list::before {
+	content: "\f0c1";
+}
+
+#layout h4.about::before {
+	content: "\f05a";
+}
+
+#layout h4.account::before {
+	content: "\f007";
+}
+
+#layout .add-widget button::before {
+	content: "\f067";
+}
