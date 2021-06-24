@@ -69,7 +69,7 @@ const TodayEpisodesWidget = ({ schedulers, shows, episodes }) => {
 			<div className="widget-content radius blur-shadow">
 				{todayShows.length === 0 ? (
 					<p className="no-content">
-						There are no episodes showing today to add
+						There are no ads showing today to add
 					</p>
 				) : (
 					<ul>
@@ -107,13 +107,12 @@ const TodayEpisodesWidget = ({ schedulers, shows, episodes }) => {
 											</dd>
 										</dl>
 										<button
-											className={`do-btn radius-3${
-												show.episodeAlreadyAdded
-													? ""
-													: " focus-shadow"
-											}`}
+											className={`do-btn radius-3${show.episodeAlreadyAdded
+												? ""
+												: " focus-shadow"
+												}`}
 											onClick={() => {
-												history.push(`/episodes/add/`, {
+												history.push(`/ads/add/`, {
 													show_id: show.id,
 													episode_no: show.nextEp,
 												});

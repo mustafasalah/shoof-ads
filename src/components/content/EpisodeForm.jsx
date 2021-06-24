@@ -51,12 +51,12 @@ const EpisodeForm = ({
 						loggedUser.id === +episodeData.author
 					)
 				) {
-					history.replace("/episodes");
+					history.replace("/ads");
 				}
 
 				onEpisodeDataLoad(episodeData);
 			} catch (ex) {
-				toast.error("There is no episode with this id: " + episodeId, {
+				toast.error("There is no ads with this id: " + episodeId, {
 					autoClose: 2500,
 					onClose: () => history.goBack(),
 				});
@@ -74,7 +74,7 @@ const EpisodeForm = ({
 			try {
 				setShowArcs(await getShowArcs(data.show_id));
 			} catch (ex) {
-				toast.error("There is no show with this id: " + data.show_id, {
+				toast.error("There is no playlist with this id: " + data.show_id, {
 					autoClose: 2500,
 					onClose: () => history.goBack(),
 				});
@@ -85,7 +85,7 @@ const EpisodeForm = ({
 	return (
 		<Fragment>
 			<SectionHeader
-				name={`${episodeId ? "Edit" : "New"} Episode`}
+				name={`${episodeId ? "Edit" : "New"} Ad`}
 				faClass={`fas ${episodeId ? "fa-edit" : "fa-plus fa-sm"}`}
 			/>
 
@@ -96,19 +96,19 @@ const EpisodeForm = ({
 					onSubmit={(e) => {
 						e.preventDefault();
 						onSubmit(data, () => {
-							history.push("/episodes/");
+							history.push("/ads/");
 						});
 					}}
 				>
 					<div id="main-side">
-						<FormSection header="Episode Information">
+						<FormSection header="Ad Information">
 							<div className="row">
 								<div className="col-1">
 									<FormField
 										name="episode.show_id"
-										label="Select Show"
+										label="Select Playlist"
 										type="select"
-										placeholder="Select Episode Show"
+										placeholder="Select Ad's Playlist"
 										options={shows
 											.filter(
 												(show) =>
@@ -131,7 +131,7 @@ const EpisodeForm = ({
 								<div className="col-3-2">
 									<FormField
 										name="episode.title"
-										label="Episode Title"
+										label="Ad Title"
 										type="text"
 										placeholder="e.g. The Pirates Of The Caribbean"
 									/>
@@ -139,7 +139,7 @@ const EpisodeForm = ({
 								<div className="col-3-1">
 									<FormField
 										name="episode.episode_no"
-										label="Episode No"
+										label="Ad No"
 										type="number"
 										min="0"
 										required
@@ -191,9 +191,9 @@ const EpisodeForm = ({
 								<div className="col-1">
 									<FormField
 										name="episode.story"
-										label="Story"
+										label="Description"
 										type="textarea"
-										placeholder="Something about episode story here..."
+										placeholder="Something about Ad here..."
 									/>
 								</div>
 							</div>
@@ -261,20 +261,20 @@ const EpisodeForm = ({
 								deleteBtn={
 									data.id
 										? {
-												label: "Delete",
-												handler: () => {
-													const deleteIt = window.confirm(
-														"Are you sure to delete this episode?"
+											label: "Delete",
+											handler: () => {
+												const deleteIt = window.confirm(
+													"Are you sure to delete this episode?"
+												);
+												deleteIt &&
+													deleteEpisodeHandler(
+														data.id
 													);
-													deleteIt &&
-														deleteEpisodeHandler(
-															data.id
-														);
-													history.replace(
-														"/episodes"
-													);
-												},
-										  }
+												history.replace(
+													"/ads"
+												);
+											},
+										}
 										: undefined
 								}
 							/>

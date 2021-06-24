@@ -33,19 +33,19 @@ import getDataActions from "./../../actions/DataActions";
 const paramTypeToDataType = new Map([
 	["movies", "movie"],
 	["anime", "anime"],
-	["tv-shows", "tvshow"],
+	["playlists", "Playlist"],
 ]);
 
 const typeDataToLabel = new Map([
 	["movie", "Movie"],
 	["anime", "Anime"],
-	["tvshow", "TV Show"],
+	["tvshow", "Playlist"],
 ]);
 
 const typeParamToLabel = new Map([
 	["movies", "Movie"],
 	["anime", "Anime"],
-	["tv-shows", "TV Show"],
+	["playlists", "Playlist"],
 ]);
 
 const ShowForm = ({
@@ -67,6 +67,8 @@ const ShowForm = ({
 	const showId = params.id && Number(params.id);
 	let isMovie, isAnime, isTVShow;
 
+	console.log(params.type);
+
 	// validate the show id is integer number
 	if (typeof showId === "number" && !Number.isInteger(showId)) {
 		history.replace("/");
@@ -75,7 +77,7 @@ const ShowForm = ({
 	if (showType) {
 		isMovie = showType === "Movie";
 		isAnime = showType === "Anime";
-		isTVShow = showType === "TV Show";
+		isTVShow = showType === "Playlist";
 	}
 
 	useEffect(() => {
@@ -169,7 +171,7 @@ const ShowForm = ({
 								<div className="col-3-2">
 									<FormField
 										label="Another Name"
-										placeholder="e.g. The name of the show in other language"
+										placeholder="e.g. The name of the playlist in other language"
 										name="show.another_name"
 										type="text"
 									/>
@@ -249,7 +251,7 @@ const ShowForm = ({
 											>
 												<FormField
 													name="show.episodes"
-													label="Episodes No"
+													label="Ads Number"
 													type="number"
 													placeholder="e.g. 12"
 													min="0"
@@ -379,9 +381,9 @@ const ShowForm = ({
 								<div className="col-1">
 									<FormField
 										name="show.story"
-										label="Story"
+										label="Description"
 										type="textarea"
-										placeholder="Something about movie story here..."
+										placeholder="Something about this playlist here..."
 										required
 									/>
 								</div>
@@ -479,7 +481,7 @@ const ShowForm = ({
 
 					<div id="end-side">
 						<FormSideSection
-							label="Show Poster"
+							label="Playlist Poster"
 							id="show-poster-widget"
 							required
 						>
@@ -487,7 +489,7 @@ const ShowForm = ({
 						</FormSideSection>
 
 						<FormSideSection
-							label="Show Background"
+							label="Playlist Background"
 							id="show-background-widget"
 							required
 						>
@@ -536,7 +538,7 @@ const ShowForm = ({
 										htmlAfterField={
 											<small>
 												Used to group collection of
-												shows together under certain
+												playlists together under certain
 												name
 											</small>
 										}
@@ -565,18 +567,18 @@ const ShowForm = ({
 								deleteBtn={
 									data.id
 										? {
-												label: "Delete",
-												handler: () => {
-													const deleteIt = window.confirm(
-														"Are you sure to delete this show?"
+											label: "Delete",
+											handler: () => {
+												const deleteIt = window.confirm(
+													"Are you sure to delete this playlist?"
+												);
+												deleteIt &&
+													deleteShowHandler(
+														data.id
 													);
-													deleteIt &&
-														deleteShowHandler(
-															data.id
-														);
-													history.replace("/shows");
-												},
-										  }
+												history.replace("/shows");
+											},
+										}
 										: undefined
 								}
 							/>

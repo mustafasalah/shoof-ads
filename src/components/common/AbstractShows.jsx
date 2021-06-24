@@ -16,7 +16,7 @@ class AbstractShows extends AbstractTablePage {
 		},
 		{
 			dataProp: "name",
-			label: "Show Name",
+			label: "Playlist Name",
 			haveSort: true,
 			classNames: "primary-col",
 			type: "link",
@@ -41,7 +41,7 @@ class AbstractShows extends AbstractTablePage {
 					href: "#delete-:id",
 					onClick: ({ id }) => {
 						const isDelete = window.confirm(
-							"Are you sure to delete this show?"
+							"Are you sure to delete this playlist?"
 						);
 						isDelete && this.props.deleteData(id);
 					},
@@ -99,7 +99,7 @@ class AbstractShows extends AbstractTablePage {
 
 	handleDelete() {
 		const deleteShows = window.confirm(
-			"Are you sure to delete the selected shows?"
+			"Are you sure to delete the selected playlists?"
 		);
 		const selectedItems = this.authorizeActionOnSelectedItems();
 		deleteShows && this.props.deleteData(selectedItems);

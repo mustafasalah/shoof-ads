@@ -51,13 +51,11 @@ const RecentWidget = ({
 								<div className="item-content">
 									<strong>
 										<a
-											href={`${HOSTNAME}/shows/${
-												item.showId
-											}${
-												item.episodeNo != undefined
-													? `/episodes/${item.episodeNo}`
+											href={`${HOSTNAME}/shows/${item.showId
+												}${item.episodeNo != undefined
+													? `/ads/${item.episodeNo}`
 													: ""
-											}`}
+												}`}
 											target="_blank"
 											rel="noreferrer"
 										>
@@ -69,7 +67,7 @@ const RecentWidget = ({
 									</strong>
 									{(typeof doBtnCondition === "function" &&
 										doBtnCondition(item)) ||
-									doBtnCondition === undefined ? (
+										doBtnCondition === undefined ? (
 										<button
 											className="do-btn radius-3 focus-shadow"
 											type="button"

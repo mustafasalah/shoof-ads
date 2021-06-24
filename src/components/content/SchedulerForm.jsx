@@ -59,7 +59,7 @@ const SchedulerForm = ({
 									value={data.showId}
 									options={[
 										{
-											label: "Select show to schedule",
+											label: "Select playlist to schedule",
 											value: "",
 										},
 										...shows.map(({ id, name }) => ({

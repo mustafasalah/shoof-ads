@@ -22,18 +22,16 @@ class Reports extends AbstractTablePage {
 				return (
 					<Fragment>
 						<a
-							href={`${HOSTNAME}/shows/${showId}${
-								episodeNo ? "/episodes/" + episodeNo : ""
-							}`}
+							href={`${HOSTNAME}/shows/${showId}${episodeNo ? "/episodes/" + episodeNo : ""
+								}`}
 							target="_blank"
 							rel="noreferrer"
 						>
-							{`${showName}${
-								episodeNo
-									? " - Episode " +
-									  episodeNo.toString().padStart(2, "0")
-									: ""
-							}`}
+							{`${showName}${episodeNo
+								? " - Ad " +
+								episodeNo.toString().padStart(2, "0")
+								: ""
+								}`}
 						</a>
 						{renderLinksNav()}
 					</Fragment>

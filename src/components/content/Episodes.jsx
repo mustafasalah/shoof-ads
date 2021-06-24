@@ -14,7 +14,7 @@ class Episodes extends AbstractTablePage {
 	tableColumns = [
 		{
 			dataProp: "showName",
-			label: "Episode Info",
+			label: "Ad Info",
 			haveSort: true,
 			classNames: "primary-col",
 			type: "custom",
@@ -69,7 +69,7 @@ class Episodes extends AbstractTablePage {
 				{
 					label: "Edit",
 					className: "edit-item",
-					href: "/episodes/:id",
+					href: "/ads/:id",
 					permission: "supervisor",
 				},
 				{
@@ -144,14 +144,14 @@ class Episodes extends AbstractTablePage {
 
 	sectionHeader = (
 		<SectionHeader
-			name="Episodes"
-			link={{ href: "/episodes/add", label: "New Episode" }}
+			name="Ads"
+			link={{ href: "/ads/add", label: "New Ad" }}
 		/>
 	);
 
 	handleDelete() {
 		const deleteEpisodes = window.confirm(
-			"Are you sure to delete the selected shows?"
+			"Are you sure to delete the selected Ads?"
 		);
 		const selectedItems = this.authorizeActionOnSelectedItems();
 		deleteEpisodes && this.props.deleteData(selectedItems);

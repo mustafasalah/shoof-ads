@@ -50,7 +50,7 @@ const TableFilters = ({ filters, filtersData, onFilter }) => {
 						}
 						type="search"
 						className="radius-3"
-						placeholder={`search by ${filter.label}...`}
+						placeholder={`playlist name...`}
 					/>
 				</div>
 			))}

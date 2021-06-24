@@ -27,7 +27,6 @@ const Content = ({ loggedUser: { role } }) => {
 		<section id="content-section">
 			{authorize(role, "publisher") && (
 				<Switch>
-					<Redirect from="/tv-shows" to="/shows/tv-shows" exact />
 					<Redirect from="/anime" to="/shows/anime" exact />
 					<Redirect from="/movies" to="/shows/movies" exact />
 					<Redirect from="/" to="/dashboard" exact />
@@ -40,19 +39,19 @@ const Content = ({ loggedUser: { role } }) => {
 
 					<Route
 						path={[
-							"/episodes/add/:showId/:episodeNo",
-							"/episodes/add/:showId/",
-							"/episodes/add/",
+							"/ads/add/:showId/:episodeNo",
+							"/ads/add/:showId/",
+							"/ads/add/",
 						]}
 						component={EpisodeForm}
 					/>
-					<Route path="/episodes/:id" component={EpisodeForm} />
-					<Route path="/episodes" component={Episodes} exact />
+					<Route path="/ads/:id" component={EpisodeForm} />
+					<Route path="/ads" component={Episodes} exact />
 
-					<Route path="/shows/tv-shows" component={TVShows} exact />
+					<Route path="/playlists" component={TVShows} exact />
 					<Route path="/shows/anime" component={Animes} exact />
 					<Route path="/shows/movies" component={Movies} exact />
-					<Route path="/shows/:type/add" component={ShowForm} />
+					<Route path={["/shows/:type/add", "/:type/add"]} component={ShowForm} />
 					<Route path="/shows/:id" component={ShowForm} />
 					<Route path="/shows" component={Shows} exact />
 

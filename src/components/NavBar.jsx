@@ -37,9 +37,9 @@ const renderShowsLinks = (siteContent) => {
 
 		return (
 			<li>
-				<NavLink to={`/shows/${content}`} className="radius">
+				<NavLink to={`/playlists`} className="radius">
 					<i className="fas fa-film"></i>{" "}
-					{content === "tv-shows" ? "TV Shows" : upperFirst(content)}
+					{content === "tv-shows" ? "Playlists" : upperFirst(content)}
 				</NavLink>
 			</li>
 		);
@@ -75,29 +75,29 @@ const NavBar = ({
 
 				{(siteContent.includes("tvshows") ||
 					siteContent.includes("anime")) && (
-					<li>
-						<NavLink to="/episodes" className="radius">
-							<i className="fas fa-film"></i> Episodes
-						</NavLink>
+						<li>
+							<NavLink to="/ads" className="radius">
+								<i className="fas fa-film"></i> Ads
+							</NavLink>
 
-						<ul className="sub-menu blur-shadow radius">
-							<li>
-								<NavLink exact to="/episodes">
-									All Episodes
-								</NavLink>
-							</li>
+							<ul className="sub-menu blur-shadow radius">
+								<li>
+									<NavLink exact to="/ads">
+										All Ads
+									</NavLink>
+								</li>
 
-							<li>
-								<NavLink
-									to="/episodes/add"
-									className="add-link"
-								>
-									Add Episode
-								</NavLink>
-							</li>
-						</ul>
-					</li>
-				)}
+								<li>
+									<NavLink
+										to="/ads/add"
+										className="add-link"
+									>
+										Add Ads
+									</NavLink>
+								</li>
+							</ul>
+						</li>
+					)}
 
 				<li>
 					<NavLink to="/comments" className="radius">

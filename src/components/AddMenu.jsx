@@ -16,12 +16,12 @@ const AddMenu = ({ loggedUser, siteContent, active, onClick }) => {
 			<ul className="sub-menu blur-shadow">
 				{(siteContent.includes("tvshows") ||
 					siteContent.includes("anime")) && (
-					<li>
-						<Link to="/episodes/add">
-							<i className="fas fa-plus"></i> Add Episode
-						</Link>
-					</li>
-				)}
+						<li>
+							<Link to="/ads/add">
+								<i className="fas fa-plus"></i> Add Ads
+							</Link>
+						</li>
+					)}
 
 				{siteContent.includes("movies") && (
 					<li>
@@ -41,8 +41,8 @@ const AddMenu = ({ loggedUser, siteContent, active, onClick }) => {
 
 				{siteContent.includes("tvshows") && (
 					<li>
-						<Link to="/shows/tv-shows/add">
-							<i className="fas fa-plus"></i> Add TV Show
+						<Link to="/playlists/add">
+							<i className="fas fa-plus"></i> Add Playlist
 						</Link>
 					</li>
 				)}

@@ -105,7 +105,7 @@ class Comments extends AbstractTablePage {
 							target="_blank"
 							rel="noreferrer"
 						>
-							Episode
+							Ad
 							{` ${rowData.episodeNo
 								.toString()
 								.padStart(2, "0")}: ${rowData.showName}`}

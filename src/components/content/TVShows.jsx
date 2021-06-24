@@ -8,8 +8,8 @@ import SectionHeader from "../common/SectionHeader";
 class TVShows extends AbstractShows {
 	sectionHeader = (
 		<SectionHeader
-			name="TV Shows"
-			link={{ href: "/shows/tv-shows/add", label: "New TV Show" }}
+			name="Playlists"
+			link={{ href: "/playlists/add", label: "New Playlist" }}
 		/>
 	);
 }

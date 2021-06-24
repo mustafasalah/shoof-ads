@@ -21,7 +21,7 @@ const getContentList = (content) => {
 
 			case "tvshows":
 				label = "TV Show";
-				href = `/shows/tv-shows/add`;
+				href = `/shows/playlists/add`;
 				break;
 		}
 
