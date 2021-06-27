@@ -23,64 +23,67 @@ import EpisodeForm from "./content/EpisodeForm";
 import { authorize } from "./../js/Utility";
 
 const Content = ({ loggedUser: { role } }) => {
-	return (
-		<section id="content-section">
-			{authorize(role, "publisher") && (
-				<Switch>
-					<Redirect from="/anime" to="/shows/anime" exact />
-					<Redirect from="/movies" to="/shows/movies" exact />
-					<Redirect from="/" to="/dashboard" exact />
+    return (
+        <section id="content-section">
+            {authorize(role, "publisher") && (
+                <Switch>
+                    <Redirect from="/anime" to="/shows/anime" exact />
+                    <Redirect from="/movies" to="/shows/movies" exact />
+                    <Redirect from="/" to="/dashboard" exact />
 
-					<Route path="/dashboard" component={Dashboard} />
+                    <Route path="/dashboard" component={Dashboard} />
 
-					<Route path="/comments" component={Comments} />
-					<Route path="/reports" component={Reports} />
-					<Route path="/reviews" component={Reviews} />
+                    <Route path="/comments" component={Comments} />
+                    <Route path="/reports" component={Reports} />
+                    <Route path="/reviews" component={Reviews} />
 
-					<Route
-						path={[
-							"/ads/add/:showId/:episodeNo",
-							"/ads/add/:showId/",
-							"/ads/add/",
-						]}
-						component={EpisodeForm}
-					/>
-					<Route path="/ads/:id" component={EpisodeForm} />
-					<Route path="/ads" component={Episodes} exact />
+                    <Route
+                        path={[
+                            "/ads/add/:showId/:episodeNo",
+                            "/ads/add/:showId/",
+                            "/ads/add/",
+                        ]}
+                        component={EpisodeForm}
+                    />
+                    <Route path="/ads/:id" component={EpisodeForm} />
+                    <Route path="/ads" component={Episodes} exact />
 
-					<Route path="/playlists" component={TVShows} exact />
-					<Route path="/shows/anime" component={Animes} exact />
-					<Route path="/shows/movies" component={Movies} exact />
-					<Route path={["/shows/:type/add", "/:type/add"]} component={ShowForm} />
-					<Route path="/shows/:id" component={ShowForm} />
-					<Route path="/shows" component={Shows} exact />
+                    <Route path="/playlists" component={TVShows} exact />
+                    <Route path="/shows/anime" component={Animes} exact />
+                    <Route path="/shows/movies" component={Movies} exact />
+                    <Route
+                        path={["/shows/:type/add", "/:type/add"]}
+                        component={ShowForm}
+                    />
+                    <Route path="/playlists/:id" component={ShowForm} />
+                    <Route path="/shows" component={Shows} exact />
 
-					{authorize(role, "supervisor") && (
-						<Route path="/scheduler" component={Scheduler} />
-					)}
+                    {authorize(role, "supervisor") && (
+                        <Route path="/scheduler" component={Scheduler} />
+                    )}
 
-					{authorize(role, "admin") && (
-						<Switch>
-							<Route
-								path="/layout/main-menu"
-								component={MainMenu}
-							/>
-							<Route path="/layout" component={Layout} exact />
-							<Route path="/settings" component={Settings} />
+                    {authorize(role, "admin") && (
+                        <Switch>
+                            <Route
+                                path="/layout/main-menu"
+                                component={MainMenu}
+                            />
+                            <Route path="/layout" component={Layout} exact />
+                            <Route path="/settings" component={Settings} />
 
-							<Route path="/users/new" component={UserForm} />
-							<Route path="/users/:id" component={UserForm} />
-							<Route path="/users" component={Users} exact />
+                            <Route path="/users/new" component={UserForm} />
+                            <Route path="/users/:id" component={UserForm} />
+                            <Route path="/users" component={Users} exact />
 
-							<Route path="/pages/new" component={Page} />
-							<Route path="/pages/:id" component={Page} />
-							<Route path="/pages" component={Pages} exact />
-						</Switch>
-					)}
-				</Switch>
-			)}
-		</section>
-	);
+                            <Route path="/pages/new" component={Page} />
+                            <Route path="/pages/:id" component={Page} />
+                            <Route path="/pages" component={Pages} exact />
+                        </Switch>
+                    )}
+                </Switch>
+            )}
+        </section>
+    );
 };
 
 export default connect((state) => ({ loggedUser: state.loggedUser }))(Content);
