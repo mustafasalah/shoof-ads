@@ -12,6 +12,7 @@ import Loader from "./common/Loader";
 import "promise-polyfill/src/polyfill";
 
 class App extends Component {
+	
 	async componentDidMount() {
 		const {
 			loginUser,

@@ -101,7 +101,8 @@ const mediaSchema = {
         .empty("")
         .label("Duration"),
     release_date: joi.date().empty("").raw(true),
-    story: joi.string(),
+    story: joi.string().empty(""),
+    repeat_times: joi.number().integer().empty("").min(1).label("Repeat Times"),
     watching_servers: joi.array().items(
         joi
             .object({
@@ -112,7 +113,7 @@ const mediaSchema = {
             })
             .with("code", "name")
             .with("files", "name")
-    ),
+    ).sparse(),
     video_files: joi.array().items(
         joi.object({
             delete: joi.bool().empty(""),
@@ -175,6 +176,8 @@ export const episodeSchema = {
     episode_no: joi.number().min(0).required().label("Ads Number"),
     episode_arc: joi.number().integer().min(1).label("Episode Arc").empty(""),
     comments_enabled: joi.allow("0", "1"),
+    aired_from: joi.date().empty("").raw(true),
+    aired_to: joi.date().empty("").raw(true),
 };
 
 export const showSchema = {
@@ -185,11 +188,11 @@ export const showSchema = {
     name: joi.string().required().empty("").label("Playlist Name"),
     another_name: joi.string().empty("").label("Another Name"),
     genres: joi.array().min(1).required().label("Genres"),
-    release_year: joi.number().integer().min(1800).label("Release Year"),
+    release_year: joi.number().integer().min(1800).empty("").label("Release Year"),
     score: joi.number().min(1).max(10).empty("").label("Score"),
     rate: joi.any().allow(...getRates().map((rate) => rate.value)),
     season: joi.number().integer().min(1).empty("").label("Season No"),
-    episodes: joi.number().integer().min(1).empty("").label("Episodes No"),
+    episodes: joi.number().integer().min(1).empty("").label("Ad No"),
     status: joi
         .any()
         .allow(...getShowStatus().map((status) => status.value))

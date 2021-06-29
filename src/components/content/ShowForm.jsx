@@ -140,7 +140,7 @@ const ShowForm = ({
                     <div id="main-side">
                         <FormSection header={`${showType} Information`}>
                             <div className="row">
-                                <div className="col-3-2">
+                                <div className="col-2">
                                     <FormField
                                         name="show.name"
                                         label={`${showType} Name`}
@@ -149,42 +149,31 @@ const ShowForm = ({
                                         required
                                     />
                                 </div>
-                                <div className="col-3-1">
-                                    <FormField
-                                        name="show.genres"
-                                        label="Categories"
-                                        type="select"
-                                        placeholder="Select Categories"
-                                        options={getGenres().map((genre) => ({
-                                            label: upperFirst(genre),
-                                            value: genre,
-                                        }))}
-                                        multiple
-                                        required
-                                    />
-                                </div>
-                            </div>
-
-                            <div className="row">
                                 <div className="col-2">
-                                    <FormField
-                                        name="show.aired_from"
-                                        className="date"
-                                        label="Aired from"
-                                        type="text"
-                                        autoComplete="off"
-                                        dateType="date-from"
-                                    />
-                                </div>
-                                <div className="col-2">
-                                    <FormField
-                                        name="show.aired_to"
-                                        className="date"
-                                        label="Aired to"
-                                        type="text"
-                                        autoComplete="off"
-                                        dateType="date-to"
-                                    />
+                                    <div className="row">
+                                        <div className="col-3-2">
+                                            <FormField
+                                                name="show.genres"
+                                                label="Categories"
+                                                type="select"
+                                                placeholder="Select Categories"
+                                                options={getGenres().map((genre) => ({
+                                                    label: upperFirst(genre),
+                                                    value: genre,
+                                                }))}
+                                                multiple
+                                                required
+                                            />
+                                        </div>
+                                        <div className="col-3-1">
+                                            <FormField
+                                                name="show.repeat_times"
+                                                label="Repeat times"
+                                                type="number"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </FormSection>
@@ -302,7 +291,7 @@ const ShowForm = ({
                             </div>
                         </FormSideSection> */}
 
-                        <FormSideSection label="Tags" id="tags">
+                        <FormSideSection label="Tags" id="tags" closed>
                             <div className="row">
                                 <div className="col-1">
                                     <TagsField
@@ -327,6 +316,7 @@ const ShowForm = ({
                         <FormSideSection label="Publish" id="publish">
                             <PublishFields
                                 form="show"
+                                formLabel="playlist"
                                 submitLabel={
                                     data.id ? "Save Changes" : "Create"
                                 }

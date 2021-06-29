@@ -36,8 +36,7 @@ const PosterField = ({ posterFile }) => {
 						? `${posterFile.name} / ${(
 								posterFile.size / 1e6
 						  ).toFixed(2)}MB`
-						: `The official poster of the show, make sure that the
-						image is of high quality.`}
+						: `The playlist poster.`}
 				</p>
 			</div>
 		</div>

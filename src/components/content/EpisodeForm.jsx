@@ -131,7 +131,7 @@ const EpisodeForm = ({
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-3-2">
+                                <div className="col-3-1">
                                     <FormField
                                         name="episode.title"
                                         label="Ad Title"
@@ -139,6 +139,16 @@ const EpisodeForm = ({
                                         placeholder="e.g. The Pirates Of The Caribbean"
                                     />
                                 </div>
+
+                                <div className="col-3-1">
+                                    <FormField
+                                        name="episode.repeat_times"
+                                        label="Repeat times"
+                                        type="number"
+                                        required
+                                    />
+                                </div>
+                                
                                 <div className="col-3-1">
                                     <FormField
                                         name="episode.episode_no"
@@ -162,7 +172,7 @@ const EpisodeForm = ({
                                 </div>
                                 <div className="col-3">
                                     <FormField
-                                        name="show.aired_from"
+                                        name="episode.aired_from"
                                         className="date"
                                         label="Aired from"
                                         type="text"
@@ -172,7 +182,7 @@ const EpisodeForm = ({
                                 </div>
                                 <div className="col-3">
                                     <FormField
-                                        name="show.aired_to"
+                                        name="episode.aired_to"
                                         className="date"
                                         label="Aired to"
                                         type="text"
@@ -196,11 +206,11 @@ const EpisodeForm = ({
                                     value={server}
                                 />
                             ))}
-                            <AddMoreBtn
+                            {/* <AddMoreBtn
                                 label="Add More Servers"
                                 formName="episode"
                                 listName="watching_servers"
-                            />
+                            /> */}
                         </FormSection>
 
                         {/* <FormSection
@@ -228,6 +238,7 @@ const EpisodeForm = ({
                         <FormSideSection label="Publish" id="publish">
                             <PublishFields
                                 form="episode"
+                                formLabel="Ad"
                                 submitLabel={
                                     data.id ? "Save Changes" : "Create"
                                 }
@@ -249,7 +260,7 @@ const EpisodeForm = ({
                                               handler: () => {
                                                   const deleteIt =
                                                       window.confirm(
-                                                          "Are you sure to delete this episode?"
+                                                          "Are you sure to delete this Ads?"
                                                       );
                                                   deleteIt &&
                                                       deleteEpisodeHandler(

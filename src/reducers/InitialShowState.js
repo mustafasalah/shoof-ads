@@ -36,6 +36,7 @@ const initialShowState = {
 		release_date: "",
 		aired_from: "",
 		aired_to: "",
+		repeat_times: 1,
 		story: "",
 		imdb_link: "",
 		mal_link: "",

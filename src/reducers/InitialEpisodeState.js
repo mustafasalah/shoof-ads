@@ -26,6 +26,9 @@ const initialEpisodeState = {
 		duration: "",
 		release_date: "",
 		story: "",
+		aired_from: "",
+		aired_to: "",
+		repeat_times: 1,
 		published: 1,
 		publish_date: {
 			date: "",
@@ -36,8 +39,8 @@ const initialEpisodeState = {
 		keywords: "",
 		description: "",
 		watching_servers: [
-			{ name: "", files: {} },
-			{ name: "", code: "" },
+			{ name: "Shoof Ads", files: {} },
+			// { name: "", code: "" },
 		],
 		video_files: [listItemsDefaults.video_files],
 	},

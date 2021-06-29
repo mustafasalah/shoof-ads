@@ -8,6 +8,7 @@ import { authorize } from "./../../js/Utility";
 const PublishFields = ({
 	loggedUser: { role },
 	form,
+	formLabel = "",
 	forms,
 	submitLabel = "Publish",
 	extraFields,
@@ -55,7 +56,7 @@ const PublishFields = ({
 						type="text"
 						htmlAfterField={
 							<small>
-								Used to find the {form} in the search engine
+								Used to find the {formLabel || form} in the search engine
 							</small>
 						}
 					/>
@@ -68,7 +69,7 @@ const PublishFields = ({
 						type="textarea"
 						htmlAfterField={
 							<small>
-								Shown in search engine results below {form} title
+								Shown in search engine results below {formLabel || form} title
 							</small>
 						}
 					/>

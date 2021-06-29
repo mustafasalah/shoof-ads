@@ -24,7 +24,7 @@ const Notification = ({
 	const getNotificationMessage = (notification) => {
 		if (notification.episode_id) {
 			const { showName, episodeNo, episodeTitle } = notification;
-			return `${showName} - Episode ${episodeNo}${
+			return `${showName} - Ad ${episodeNo}${
 				episodeTitle ? `: ${episodeTitle}` : ""
 			}`;
 		} else {

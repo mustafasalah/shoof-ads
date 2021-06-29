@@ -28,7 +28,7 @@ class Episodes extends AbstractTablePage {
 					></span>
 					<div className="episode">
 						<dl className="episode-info">
-							<dt>Episode No:</dt>
+							<dt>Ad No:</dt>
 							<dd>
 								<a
 									href={`${HOSTNAME}/shows/${rowData.showId}/episodes/${rowData.episodeNo}`}
@@ -44,7 +44,7 @@ class Episodes extends AbstractTablePage {
 								</a>
 							</dd>
 
-							<dt>Show Name:</dt>
+							<dt>Playlist:</dt>
 							<dd>
 								<a
 									href={`${HOSTNAME}/shows/${rowData.showId}`}
@@ -87,12 +87,6 @@ class Episodes extends AbstractTablePage {
 			],
 		},
 		{
-			dataProp: "category",
-			label: "Category",
-			haveSort: true,
-			type: "text",
-		},
-		{
 			dataProp: "author",
 			label: "Author",
 			haveSort: true,
@@ -118,7 +112,6 @@ class Episodes extends AbstractTablePage {
 	];
 
 	filtersData = {
-		category: ["tvshow", "anime"],
 		author: getAuthors().map((author) => author.name),
 		status: ["published", "drafted"],
 	};

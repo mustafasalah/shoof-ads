@@ -4,7 +4,6 @@ const episodesTableInitialState = {
 	...tableInitialState,
 	filters: {
 		select: {
-			category: { label: "All Categories", value: "" },
 			author: { label: "All Authors", value: "" },
 			status: { label: "All Status", value: "" },
 		},

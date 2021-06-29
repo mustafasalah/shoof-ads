@@ -2,19 +2,21 @@ import { upperFirst } from "../../js/Utility";
 
 const genres = [
     "art and design",
-    "blogs",
     "business",
     "communities",
     "education",
     "entertainment",
-    "toys",
+    "games",
     "health and life",
-    "Internet",
+    "telecom",
     "news",
     "shopping",
     "sport",
     "technique",
     "travel and tourism",
+    "industries",
+    "products",
+    "transportation",
 ];
 
 export default function getGenres() {
